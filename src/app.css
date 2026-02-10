@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	background-color: #4d463c;
+	background: radial-gradient(farthest-corner, #1a1614, #4d463c);
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 500;
+}
+
+body {
+	display: block flow-root;
+	margin: 0;
+	height: 100%;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+h1 {
+	margin: 0;
+	font-size: 3em;
+}
+
+p {
+	font-size: 1.125rem;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
