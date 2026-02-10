@@ -141,12 +141,17 @@
 		>
 			<div id="pat-center" bind:this={patCenter}></div>
 		</div>
-		<img src={tassha_base} class="base" alt="" />
-		<img src={tassha_ears_0} class="ears ears-neutral-sprite" alt="" />
-		<img src={tassha_ears_1} class="ears ears-pat ears-pat-left-sprite" alt="" />
-		<img src={tassha_ears_0} class="ears ears-pat ears-pat-center-sprite" alt="" />
-		<img src={tassha_ears_3} class="ears ears-pat ears-pat-right-sprite" alt="" />
-		<img src={tassha_talking_4} class="mouth mouth-talking-sprite-4" alt="" />
+		<img src={tassha_base} class="base" draggable="false" alt="" />
+		<img src={tassha_ears_0} class="ears ears-neutral-sprite" draggable="false" alt="" />
+		<img src={tassha_ears_1} class="ears ears-pat ears-pat-left-sprite" draggable="false" alt="" />
+		<img
+			src={tassha_ears_0}
+			class="ears ears-pat ears-pat-center-sprite"
+			draggable="false"
+			alt=""
+		/>
+		<img src={tassha_ears_3} class="ears ears-pat ears-pat-right-sprite" draggable="false" alt="" />
+		<img src={tassha_talking_4} class="mouth mouth-talking-sprite-4" draggable="false" alt="" />
 		<img
 			src={tassha_faceneutral}
 			class="face face-neutral-sprite sprite-sheet"
@@ -166,7 +171,7 @@
 			alt=""
 			draggable="false"
 		/>
-		<img src={tassha_tails} class="tail sprite-sheet" alt="" />
+		<img src={tassha_tails} class="tail sprite-sheet" draggable="false" alt="" />
 	</div>
 	<div class="shop-items">
 		<h1>Tassha Shop</h1>
