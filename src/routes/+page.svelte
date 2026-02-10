@@ -179,9 +179,11 @@
 	</div>
 	<div class="shop-footer">
 		<footer>
-			<p>Site by <a href="" target="_blank">FireIsGood</a></p>
+			<p>
+				Site by <a href="https://fireis.dev" target="_blank">FireIsGood</a>
+			</p>
 			<p>Rabbit &amp; Steel is &copy;2017 by MINO_DEV</p>
-			<p><a href="" target="_blank">Source Code</a></p>
+			<p><a href="https://github.com/FireIsGood/tassha-shop" target="_blank">Source Code</a></p>
 		</footer>
 	</div>
 </div>
