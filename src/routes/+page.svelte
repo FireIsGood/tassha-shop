@@ -13,6 +13,10 @@
 	import tassha_talking_2 from '$lib/assets/spr_deco_shopwolf_talking_2.png';
 	import tassha_talking_3 from '$lib/assets/spr_deco_shopwolf_talking_3.png';
 	import tassha_talking_4 from '$lib/assets/spr_deco_shopwolf_talking_4.png';
+	import tassha_hair_1 from '$lib/assets/spr_deco_shopwolf_hair_1.png';
+	import tassha_hair_2 from '$lib/assets/spr_deco_shopwolf_hair_2.png';
+	import tassha_hair_3 from '$lib/assets/spr_deco_shopwolf_hair_3.png';
+	import tassha_hair_4 from '$lib/assets/spr_deco_shopwolf_hair_4.png';
 	import { onMount } from 'svelte';
 
 	let patCenter: HTMLDivElement;
@@ -28,6 +32,9 @@
 
 	type EarState = 'neutral' | 'pat-center' | 'pat-left' | 'pat-right';
 	let ear_state: EarState = 'neutral';
+
+	// Initially have no hair disruption
+	let has_pat: boolean = false;
 
 	function hoverFace() {
 		hover_state = 'hovering';
@@ -47,6 +54,7 @@
 
 	function clickFace(e: MouseEvent) {
 		click_state = 'clicking';
+		has_pat = true;
 		face_state = 'comfy';
 		updateEarState(e);
 	}
@@ -126,6 +134,7 @@
 		class:face-anticipating={face_state === 'anticipating'}
 		class:face-happy={face_state === 'happy'}
 		class:face-comfy={face_state === 'comfy'}
+		class:has-pat={has_pat}
 		class:ears-pat-center={ear_state === 'pat-center'}
 		class:ears-pat-left={ear_state === 'pat-left'}
 		class:ears-pat-right={ear_state === 'pat-right'}
@@ -151,6 +160,10 @@
 			alt=""
 		/>
 		<img src={tassha_ears_3} class="ears ears-pat ears-pat-right-sprite" draggable="false" alt="" />
+		<img src={tassha_hair_1} class="hair hair-left-sprite" draggable="false" alt="" />
+		<img src={tassha_hair_3} class="hair hair-right-sprite" draggable="false" alt="" />
+		<img src={tassha_hair_2} class="hair hair-center-sprite" draggable="false" alt="" />
+		<img src={tassha_hair_4} class="hair hair-neutral-sprite" draggable="false" alt="" />
 		<img src={tassha_talking_4} class="mouth mouth-talking-sprite-4" draggable="false" alt="" />
 		<img
 			src={tassha_faceneutral}
@@ -338,6 +351,10 @@
 	.ears-pat {
 		opacity: 0;
 	}
+	.hair {
+		z-index: 5;
+		opacity: 0;
+	}
 
 	/* Face states */
 	.face-anticipating {
@@ -375,12 +392,23 @@
 		}
 	}
 
-	/* Ear states */
+	/* Pat states */
+	.has-pat {
+		.hair-neutral-sprite {
+			opacity: 1;
+		}
+	}
 	.ears-pat-center {
 		.ears-neutral-sprite {
 			opacity: 0;
 		}
 		.ears-pat-center-sprite {
+			opacity: 1;
+		}
+		.hair-neutral-sprite {
+			opacity: 0;
+		}
+		.hair-center-sprite {
 			opacity: 1;
 		}
 	}
@@ -391,12 +419,24 @@
 		.ears-pat-left-sprite {
 			opacity: 1;
 		}
+		.hair-neutral-sprite {
+			opacity: 0;
+		}
+		.hair-left-sprite {
+			opacity: 1;
+		}
 	}
 	.ears-pat-right {
 		.ears-neutral-sprite {
 			opacity: 0;
 		}
 		.ears-pat-right-sprite {
+			opacity: 1;
+		}
+		.hair-neutral-sprite {
+			opacity: 0;
+		}
+		.hair-right-sprite {
 			opacity: 1;
 		}
 	}
