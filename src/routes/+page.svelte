@@ -480,10 +480,6 @@
 			min-height: 5em;
 			min-width: 35em;
 			max-width: 100%;
-
-			&.dialog-done {
-				cursor: pointer;
-			}
 		}
 
 		.dialog-end-indicator {

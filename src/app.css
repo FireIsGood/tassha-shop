@@ -8,6 +8,16 @@ html {
 	background: radial-gradient(farthest-corner, #1a1614, #4d463c);
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 500;
+
+	cursor:
+		url('$lib/assets/spr_mouse_cursor_1_small.png') 32 32,
+		pointer;
+
+	*:active {
+		cursor:
+			url('$lib/assets/spr_mouse_cursor_2_small.png') 32 32,
+			pointer;
+	}
 }
 
 body {
